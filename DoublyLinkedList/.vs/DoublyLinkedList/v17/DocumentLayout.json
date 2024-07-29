@@ -1,0 +1,95 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|c:\\users\\duerh\\desktop\\github projects\\doublylinkedlist\\doublylinkedlist\\customdoublylinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|solutionrelative:doublylinkedlist\\customdoublylinkedlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|c:\\users\\duerh\\desktop\\github projects\\doublylinkedlist\\doublylinkedlist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|solutionrelative:doublylinkedlist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|c:\\users\\duerh\\desktop\\github projects\\doublylinkedlist\\doublylinkedlist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|solutionrelative:doublylinkedlist\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|c:\\users\\duerh\\desktop\\github projects\\doublylinkedlist\\doublylinkedlist\\doublynode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BFFC4388-519C-4F17-8046-2196F71E379A}|DoublyLinkedList\\DoublyLinkedList.csproj|solutionrelative:doublylinkedlist\\doublynode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 230,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DoublyNode.cs",
+              "DocumentMoniker": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyNode.cs",
+              "RelativeDocumentMoniker": "DoublyLinkedList\\DoublyNode.cs",
+              "ToolTip": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyNode.cs",
+              "RelativeToolTip": "DoublyLinkedList\\DoublyNode.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T20:19:06.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomDoublyLinkedList.cs",
+              "DocumentMoniker": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\CustomDoublyLinkedList.cs",
+              "RelativeDocumentMoniker": "DoublyLinkedList\\CustomDoublyLinkedList.cs",
+              "ToolTip": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\CustomDoublyLinkedList.cs",
+              "RelativeToolTip": "DoublyLinkedList\\CustomDoublyLinkedList.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T20:14:07.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\Form1.cs",
+              "RelativeDocumentMoniker": "DoublyLinkedList\\Form1.cs",
+              "ToolTip": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\Form1.cs",
+              "RelativeToolTip": "DoublyLinkedList\\Form1.cs",
+              "ViewState": "AQIAAFwAAAAAAAAAAAAuwEEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T19:36:46.284Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\Form1.cs",
+              "RelativeDocumentMoniker": "DoublyLinkedList\\Form1.cs",
+              "ToolTip": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\Form1.cs [Design]",
+              "RelativeToolTip": "DoublyLinkedList\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T19:36:42.672Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

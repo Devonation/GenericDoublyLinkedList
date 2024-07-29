@@ -1,0 +1,16 @@
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\net8.0-windows\DoublyLinkedList.exe
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\net8.0-windows\DoublyLinkedList.deps.json
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\net8.0-windows\DoublyLinkedList.runtimeconfig.json
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\net8.0-windows\DoublyLinkedList.dll
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\bin\Debug\net8.0-windows\DoublyLinkedList.pdb
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.Form1.resources
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.csproj.GenerateResource.cache
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.AssemblyInfoInputs.cache
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.AssemblyInfo.cs
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.csproj.CoreCompileInputs.cache
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.dll
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\refint\DoublyLinkedList.dll
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.pdb
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\DoublyLinkedList.genruntimeconfig.cache
+C:\Users\duerh\Desktop\GitHub Projects\DoublyLinkedList\DoublyLinkedList\obj\Debug\net8.0-windows\ref\DoublyLinkedList.dll
