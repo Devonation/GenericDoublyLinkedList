@@ -19,7 +19,15 @@ namespace DoublyLinkedList
             Head = new DoublyNode<T>(item);
             Count = 1;
         }
-        public void AddItem(T item)
+        public void AddItemBefore(T item)
+        {
+            DoublyNode<T> newNode = new(item);
+            newNode.Next = Head;
+            Head.Previous = newNode;
+            Head = newNode;
+            Count++;
+        }
+        public void AddItemAfter(T item)
         {
             if (Count == 1)
             {
@@ -55,7 +63,7 @@ namespace DoublyLinkedList
             }
             else
             {
-                AddItem(item);
+                AddItemAfter(item);
             }
         }
         private void FromFront(T item, int index)

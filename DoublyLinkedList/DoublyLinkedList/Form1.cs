@@ -1,24 +1,25 @@
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrackBar;
+
 namespace DoublyLinkedList
 {
     public partial class Form1 : Form
     {
+        private Thread playThread = null;
+        private bool endTrack = false;
         private static CustomTime customTime = new(1, 45);
         private static Track firstTrack = new("House", "Devon", customTime);
         CustomDoublyLinkedList<Track> tracks = new(firstTrack);
         public Form1()
         {
             InitializeComponent();
-            dgv_trackTable.Columns.Add("No", "No");
-            dgv_trackTable.Columns.Add("Title", "Title");
-            dgv_trackTable.Columns.Add("Artist", "Artist");
-            dgv_trackTable.Columns.Add("Duration", "Duration");
 
-            columnWidthDGV();
-            populateDGV();
-            backgroundDGV();
-
+            FormClosing += Form1_FormClosing;
             dgv_trackTable.RowsAdded += dgv_trackTable_RowsAdded;
             dgv_trackTable.RowsRemoved += dgv_trackTable_RowsRemoved;
+
+            columnsDGV();
+            populateDGV();
+            backgroundDGV();
         }
         private void backgroundDGV()
         {
@@ -29,8 +30,13 @@ namespace DoublyLinkedList
                 row.DefaultCellStyle.SelectionBackColor = Color.SteelBlue;
             }
         }
-        private void columnWidthDGV()
+        private void columnsDGV()
         {
+            dgv_trackTable.Columns.Add("No", "No");
+            dgv_trackTable.Columns.Add("Title", "Title");
+            dgv_trackTable.Columns.Add("Artist", "Artist");
+            dgv_trackTable.Columns.Add("Duration", "Duration");
+
             int totalWidth = dgv_trackTable.Width - 1;
 
             double noPercentage = 0.1;
@@ -56,19 +62,21 @@ namespace DoublyLinkedList
             DoublyNode<Track> current = tracks.Head;
             int no = 0;
 
-            Track tempTrack = current.Data;
-            int rowIndex = dgv_trackTable.Rows.Add();
-            no++;
-            fillRow(rowIndex, no, tempTrack);
-
-            while (current.Next != null)
+            do
             {
-                current = current.Next;
-                tempTrack = current.Data;
-                rowIndex = dgv_trackTable.Rows.Add();
+                Track tempTrack = current.Data;
+                int rowIndex = dgv_trackTable.Rows.Add();
                 no++;
                 fillRow(rowIndex, no, tempTrack);
-            }
+                if (current.Next != null)
+                {
+                    current = current.Next;
+                }
+                else
+                {
+                    break;
+                }
+            } while (true);
         }
         private void bt_search_Click(object sender, EventArgs e)
         {
@@ -97,7 +105,7 @@ namespace DoublyLinkedList
             if (!trackName.Equals(string.Empty) || !trackArtist.Equals(string.Empty) || !trackDuration.Equals(string.Empty))
             {
                 CustomTime customTimeTrackDuration = new CustomTime().ConvertFromStringToTime(trackDuration);
-                tracks.AddItem(new Track(trackName, trackArtist, customTimeTrackDuration));
+                tracks.AddItemAfter(new Track(trackName, trackArtist, customTimeTrackDuration));
                 populateDGV();
 
                 txb_trackName.Clear();
@@ -114,6 +122,85 @@ namespace DoublyLinkedList
         private void dgv_trackTable_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             backgroundDGV();
+        }
+        private Track retrieveCurrentRowData()
+        {
+            DataGridViewRow selectedRow = dgv_trackTable.SelectedRows[0];
+            string title = selectedRow.Cells[1].Value.ToString();
+            string artist = selectedRow.Cells[2].Value.ToString();
+            CustomTime duration = new CustomTime().ConvertFromStringToTime(selectedRow.Cells[3].Value.ToString());
+
+            return new Track(title, artist, duration);
+        }
+        private void bt_playTrack_Click(object sender, EventArgs e)
+        {
+            Track currentTrack = retrieveCurrentRowData();
+            lbl_trackTimerEnd.Text = currentTrack.Duration.TotalSeconds().ToString();
+            if (currentTrack != null)
+            {
+                playThread = new(() => PlayingTrack(currentTrack));
+                playThread.Start();
+            }
+        }
+        private void PlayingTrack(Track currentTrack)
+        {
+            int elapsedSeconds = 0;
+            CustomTime duration = currentTrack.Duration;
+            int totalSeconds = duration.TotalSeconds();
+            while (elapsedSeconds < totalSeconds && !endTrack)
+            {
+                Thread.Sleep(1000);
+                elapsedSeconds++;
+
+                if (InvokeRequired)
+                {
+                    if (!endTrack)
+                    {
+                        Invoke(new Action(() =>
+                        {
+                            lbl_trackTimerSart.Text = $"{duration.FormattedTime()}";
+                            pbar_currentTrack.Increment(1);
+                        }));
+                    }
+                }
+                else
+                {
+                    lbl_trackTimerEnd.Text = $"{duration.FormattedTime()}";
+                }
+            }
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            endTrack = true;
+        }
+
+        private void bt_shuffleTracks_Click(object sender, EventArgs e)
+        {
+            CustomDoublyLinkedList<Track> shuffledTracks = new(firstTrack);
+            int step = 0;
+            DoublyNode<Track> current = tracks.Head;
+            while (step < tracks.Count)
+            {
+                int random = new Random().Next(0, 2);
+
+                if (random == 0)
+                {
+                    shuffledTracks.AddItemBefore(current.Data);
+                }
+                else
+                {
+                    shuffledTracks.AddItemAfter(current.Data);
+                }
+                if (current.Next != null)
+                {
+                    current = current.Next;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj": {}
+    "C:\\Users\\duerh\\Desktop\\GitHub Projects\\GenericDoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj": {}
   },
   "projects": {
-    "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj": {
+    "C:\\Users\\duerh\\Desktop\\GitHub Projects\\GenericDoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj",
+        "projectUniqueName": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\GenericDoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj",
         "projectName": "DoublyLinkedList",
-        "projectPath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj",
+        "projectPath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\GenericDoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj",
         "packagesPath": "C:\\Users\\duerh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\obj\\",
+        "outputPath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\GenericDoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\duerh\\AppData\\Roaming\\NuGet\\NuGet.Config",

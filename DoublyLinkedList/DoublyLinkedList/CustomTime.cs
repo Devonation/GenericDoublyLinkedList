@@ -26,5 +26,19 @@ namespace DoublyLinkedList
             Seconds = int.Parse(times[1]);
             return new CustomTime(Minutes, Seconds);
         }
+        public int TotalSeconds()
+        {
+            return Minutes*60 + Seconds;
+        }
+        public string FormattedTime()
+        {
+            return $"{Minutes}:{Seconds}";
+        }
+        public string Format(int totalSeconds)
+        {
+            int minutes = totalSeconds / 60;
+            Math.DivRem(minutes, 60, out int seconds);
+            return $"{minutes}:{seconds}";
+        }
     }
 }

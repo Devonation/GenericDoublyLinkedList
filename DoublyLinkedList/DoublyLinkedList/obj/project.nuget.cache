@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mAHgR1QwSJ36xuxiCwtZvUrgR07dKQduo1fkrxtBqFlCV4iyK3XBIYS62GZl0VOOK7M7tEbIJRGg9QSPO2Q0aA==",
+  "dgSpecHash": "/VWpZn5Y8P+jaf8mOMM6jM1D+xfXSHIOcPDO/1IMfJLD5AzNyhTgXYhP4SZYY+kc+8XKW91DYQulyBqKES4Pqg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj",
+  "projectFilePath": "C:\\Users\\duerh\\Desktop\\GitHub Projects\\GenericDoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList\\DoublyLinkedList.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
