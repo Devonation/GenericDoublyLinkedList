@@ -5,10 +5,10 @@ namespace DoublyLinkedList
     public partial class Form1 : Form
     {
         private Thread playThread = null;
+        private Track playingTrack = null;
         private bool endTrack = false;
         private bool paused = false;
         private bool playing = false;
-        private Track playingTrack = null;
         private static CustomTime customTime = new(1, 45);
         private static Track firstTrack = new("House", "Devon", customTime);
         CustomDoublyLinkedList<Track> originalTracks = new(firstTrack);
@@ -65,21 +65,24 @@ namespace DoublyLinkedList
             DoublyNode<Track> current = playlist.Head;
             int no = 0;
 
-            do
+            if (current != null)
             {
-                Track tempTrack = current.Data;
-                int rowIndex = dgv_trackTable.Rows.Add();
-                no++;
-                fillRow(rowIndex, no, tempTrack);
-                if (current.Next != null)
+                do
                 {
-                    current = current.Next;
-                }
-                else
-                {
-                    break;
-                }
-            } while (true);
+                    Track tempTrack = current.Data;
+                    int rowIndex = dgv_trackTable.Rows.Add();
+                    no++;
+                    fillRow(rowIndex, no, tempTrack);
+                    if (current.Next != null)
+                    {
+                        current = current.Next;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                } while (true);
+            }
         }
         private void bt_search_Click(object sender, EventArgs e)
         {
@@ -128,12 +131,19 @@ namespace DoublyLinkedList
         }
         private Track retrieveCurrentRowData()
         {
-            DataGridViewRow selectedRow = dgv_trackTable.SelectedRows[0];
-            string title = selectedRow.Cells[1].Value.ToString();
-            string artist = selectedRow.Cells[2].Value.ToString();
-            CustomTime duration = new(selectedRow.Cells[3].Value.ToString());
+            if (originalTracks.Count > 0)
+            {
+                DataGridViewRow selectedRow = dgv_trackTable.SelectedRows[0];
+                string title = selectedRow.Cells[1].Value.ToString();
+                //string artist = selectedRow.Cells[2].Value.ToString();
+                //CustomTime duration = new(selectedRow.Cells[3].Value.ToString());
 
-            return new Track(title, artist, duration);
+                return originalTracks.SearchItem(title);
+            }
+            else
+            {
+                return null;
+            }
         }
         private void bt_playTrack_Click(object sender, EventArgs e)
         {
@@ -225,39 +235,59 @@ namespace DoublyLinkedList
 
         private void bt_shuffleTracks_Click(object sender, EventArgs e)
         {
-            CustomDoublyLinkedList<Track> shuffledTracks = new(firstTrack);
+            CustomDoublyLinkedList<Track> shuffledTracks = new();
             int step = 0;
-            if (originalTracks.Head.Next != null)
+            if (originalTracks.Head != null)
             {
-                DoublyNode<Track> current = originalTracks.Head.Next;
-                while (step < originalTracks.Count)
+                if (originalTracks.Head.Next != null)
                 {
-                    int random = new Random().Next(0, 2);
+                    DoublyNode<Track> current = originalTracks.Head.Next;
+                    while (step < originalTracks.Count)
+                    {
+                        int random = new Random().Next(0, 2);
 
-                    if (random == 0)
-                    {
-                        shuffledTracks.PrependItem(current.Data);
+                        if (random == 0)
+                        {
+                            shuffledTracks.PrependItem(current.Data);
+                        }
+                        else
+                        {
+                            shuffledTracks.AppendItem(current.Data);
+                        }
+                        if (current.Next != null)
+                        {
+                            current = current.Next;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
-                    else
-                    {
-                        shuffledTracks.AppendItem(current.Data);
-                    }
-                    if (current.Next != null)
-                    {
-                        current = current.Next;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    populateDGV(shuffledTracks);
                 }
-                populateDGV(shuffledTracks);
             }
+            
         }
 
         private void bt_pauseTrack_Click(object sender, EventArgs e)
         {
             paused = true;
+        }
+        private void ResetCurrentTrackUI()
+        {
+            pbar_currentTrack.Value = 0;
+            lbl_trackTimerCurrent.Text = "0:00";
+            lbl_trackTimerEnd.Text = "0:00";
+        }
+        private void bt_deleteTrack_Click(object sender, EventArgs e)
+        {
+            Track? currentTrack = retrieveCurrentRowData();
+            if (currentTrack != null)
+            {
+                originalTracks.RemoveItem(currentTrack);
+                populateDGV(originalTracks);
+            }
+            ResetCurrentTrackUI();
         }
     }
 }

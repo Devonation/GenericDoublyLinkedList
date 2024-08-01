@@ -13,11 +13,44 @@ namespace DoublyLinkedList
         public DoublyNode<T> Head { get; set; } 
         public DoublyNode<T> Tail { get; set; } 
         public int Count { get; set; }
-
+        public CustomDoublyLinkedList()
+        {
+            Head = null;
+            Count = 0;
+        }
         public CustomDoublyLinkedList(T item)
         {
             Head = new DoublyNode<T>(item);
             Count = 1;
+        }
+        public void RemoveItem(T item)
+        {
+            int step = 0;
+            DoublyNode<T> current = Head;
+            if (Head.Data.Equals(item))
+            {
+                current = current.Next;
+                Head = current;
+            }
+            else
+            {
+                while (step < Count)
+                {
+                    if (current.Data.Equals(item))
+                    {
+                        DoublyNode<T> temp = current;
+                        current.Previous.Next = temp.Next;
+                        current = temp.Next;
+                        break;
+                    }
+                    if (current.Next != null)
+                    {
+                        current = current.Next;
+                    }
+                    step++;
+                }
+            }
+            Count--;
         }
         public void PrependItem(T item)
         {
@@ -40,7 +73,13 @@ namespace DoublyLinkedList
         }
         public void AppendItem(T item)
         {
-            if (Count == 1)
+            if (Count == 0)
+            {
+                DoublyNode<T> newNode = new(item);
+                Head = newNode;
+                Tail = newNode;
+            }
+            else if (Count == 1)
             {
                 DoublyNode<T> newNode = new(item);
                 newNode.Previous = Head;
