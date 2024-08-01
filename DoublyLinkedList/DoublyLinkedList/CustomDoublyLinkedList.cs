@@ -19,15 +19,26 @@ namespace DoublyLinkedList
             Head = new DoublyNode<T>(item);
             Count = 1;
         }
-        public void AddItemBefore(T item)
+        public void PrependItem(T item)
         {
-            DoublyNode<T> newNode = new(item);
-            newNode.Next = Head;
-            Head.Previous = newNode;
-            Head = newNode;
+            if (Count == 1)
+            {
+                DoublyNode<T> newNode = new(item);
+                newNode.Next = Head;
+                Head.Previous = newNode;
+                Tail = Head;
+                Head = newNode;
+            }
+            else
+            {
+                DoublyNode<T> newNode = new(item);
+                newNode.Next = Head;
+                Head.Previous = newNode;
+                Head = newNode;
+            }
             Count++;
         }
-        public void AddItemAfter(T item)
+        public void AppendItem(T item)
         {
             if (Count == 1)
             {
@@ -53,20 +64,20 @@ namespace DoublyLinkedList
                 double linkedListLength = Count;
                 if (index < Math.Ceiling(linkedListLength / 2))
                 {
-                    FromFront(item, index);
+                    SearchFromHead(item, index);
                 }
                 else
                 {
-                    FromBack(item, index);
+                    SearchFromTail(item, index);
                 }
                 Count++;
             }
             else
             {
-                AddItemAfter(item);
+                AppendItem(item);
             }
         }
-        private void FromFront(T item, int index)
+        private void SearchFromHead(T item, int index)
         {
             int step = 0;
             DoublyNode<T> newNode = new(item);
@@ -82,7 +93,7 @@ namespace DoublyLinkedList
             current.Next.Previous = newNode;
             current.Next = newNode;
         }
-        private void FromBack(T item, int index)
+        private void SearchFromTail(T item, int index)
         {
             int step = Count - 1;
             DoublyNode<T> newNode = new(item);

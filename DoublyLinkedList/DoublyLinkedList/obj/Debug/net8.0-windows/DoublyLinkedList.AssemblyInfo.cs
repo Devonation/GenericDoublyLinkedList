@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DoublyLinkedList")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65f38999fe71ee4ab4f91c30741479f2c8464429")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2773a62748a56cef385c9245045b76400ab95955")]
 [assembly: System.Reflection.AssemblyProductAttribute("DoublyLinkedList")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DoublyLinkedList")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
